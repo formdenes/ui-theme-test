@@ -1,7 +1,7 @@
 {
-  "name": "ui-theme-test",
+  "name": "@hcl/ui-theme-test",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,9 @@
   "homepage": "https://github.com/formdenes/ui-theme-test#readme",
   "description": "",
   "dependencies": {
+    "@mui/material": "^7.3.4"
+  },
+  "peerDependencies": {
     "@mui/material": "^7.3.4"
   }
 }
