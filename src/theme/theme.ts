@@ -135,6 +135,53 @@ export const getThemeOptions = (): ThemeOptions => ({
         },
       },
     },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          display: 'none',
+        },
+        root: {
+          background: "#F7FAFC",
+          borderRadius: "12px",
+          display: "inline-flex",
+          height: "40px",
+          minHeight: "auto",
+          padding: 0,
+          width: "auto",
+        }
+      }
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          alignItems: "center",
+          border: "1px solid transparent",
+          borderRadius: "12px",
+          color: "#1a1a1a",
+          fontSize: "12.25px",
+          margin: ".25rem",
+          minHeight: "auto",
+          minWidth: "126px",
+          padding: "7px 10.5px",
+          textTransform: "capitalize",
+          "&.Mui-selected": {
+            backgroundColor: "white",
+            borderColor: "white",
+            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);",
+            color: "inherit"
+          },
+        }
+      }
+    },
+    MuiTouchRipple: {
+      styleOverrides: {
+        root: {
+          '& .MuiTouchRipple-child': {
+            backgroundColor: "rgba(0, 0, 0, 0.2)"
+          }
+        }
+      }
+    }
     // ... all component customizations
   },
   spacing: 8, // base spacing unit
