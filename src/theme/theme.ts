@@ -1,14 +1,246 @@
 import type { ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 
+// HCL Color Palette - exported for use in custom components
+export const colors = {
+  purple: {
+    50: "#E2D9FB",
+    100: "#C5B4F7",
+    200: "#A98EF4",
+    300: "#8C69F0",
+    400: "#8258E8",
+    500: "#7647DD", // Mid Purple
+    600: "#6B35D3",
+    700: "#5F1EBE", // Tech Purple
+    800: "#4c189e",
+    900: "#411482", // Dark Purple
+  },
+  blue: {
+    50: "#D7ECFD",
+    100: "#B4DBFC",
+    200: "#8CC8FA",
+    300: "#6EB8F9",
+    400: "#4B9EF9",
+    500: "#3C91FF", // Tech Blue
+    600: "#3282FA",
+    700: "#2874f0",
+    800: "#0f5fdc", // Dark Blue
+    900: "#0049B2",
+  },
+  teal: {
+    50: "#d2f2ed",
+    100: "#a5e6dc",
+    200: "#8adbcf",
+    300: "#6fcfbf",
+    400: "#4bc3af",
+    500: "#33afa0",
+    600: "#2ba096",
+    700: "#198e88",
+    800: "#007873", // Dark Teal
+    900: "#006059",
+  },
+  green: {
+    50: "#def5d9",
+    100: "#beebb4",
+    200: "#a1e596",
+    300: "#82dc73",
+    400: "#62d16b",
+    500: "#49c173",
+    600: "#2db26c",
+    700: "#0fa069", // Dark Green
+    800: "#0a875d",
+    900: "#077251",
+  },
+  yellow: {
+    50: "#fff2d9",
+    100: "#ffe6b4",
+    200: "#ffe18d",
+    300: "#ffd970",
+    400: "#ffcd41",
+    500: "#f2bb33",
+    600: "#e2ab30",
+    700: "#d8991d",
+    800: "#c8870a", // Dark Yellow
+    900: "#ad6f0b",
+  },
+  coral: {
+    50: "#ffdeeb",
+    100: "#ffbed7",
+    200: "#ffaecb",
+    300: "#ff94b5",
+    400: "#ff789b",
+    500: "#f7668f",
+    600: "#ed5a88",
+    700: "#d64770",
+    800: "#c3325f", // Dark Coral
+    900: "#aa1f51",
+  },
+  bronze: {
+    50: "#FAF0E6", // Cream
+    100: "#eadcd6",
+    200: "#e0cdc6",
+    300: "#d7beb4",
+    400: "#c6aaa1",
+    500: "#b79d9a",
+    600: "#a88a83",
+    700: "#9e7c75",
+    800: "#936e64",
+    900: "#896056",
+  },
+  grey: {
+    50: "#FFFFFF",
+    100: "#E6EBF5",
+    200: "#D5DCE5",
+    300: "#C8D2DD",
+    400: "#B9C3D0",
+    500: "#A5AFBE",
+    600: "#919EAF",
+    700: "#8291A0",
+    800: "#6C7882",
+    900: "#5B666D",
+    A100: "#475156",
+    A200: "#333A3D",
+    A400: "#1D2123",
+    A700: "#000000",
+  },
+};
+
 export const getThemeOptions = (): ThemeOptions => ({
+  palette: {
+    primary: {
+      main: colors.purple[700], // Tech Purple
+      light: colors.purple[500],
+      dark: colors.purple[900],
+      contrastText: "#FFFFFF",
+    },
+    secondary: {
+      main: colors.blue[500], // Tech Blue
+      light: colors.blue[400],
+      dark: colors.blue[800],
+      contrastText: "#FFFFFF",
+    },
+    error: {
+      main: colors.coral[600],
+      light: colors.coral[400],
+      dark: colors.coral[800],
+      contrastText: "#FFFFFF",
+    },
+    warning: {
+      main: colors.yellow[500],
+      light: colors.yellow[300],
+      dark: colors.yellow[800],
+      contrastText: colors.grey.A400,
+    },
+    info: {
+      main: colors.blue[600],
+      light: colors.blue[300],
+      dark: colors.blue[900],
+      contrastText: "#FFFFFF",
+    },
+    success: {
+      main: colors.green[600],
+      light: colors.green[400],
+      dark: colors.green[800],
+      contrastText: "#FFFFFF",
+    },
+    grey: colors.grey,
+    text: {
+      primary: colors.grey.A400,
+      secondary: colors.grey[900],
+      disabled: colors.grey[700],
+    },
+    background: {
+      default: colors.grey[50],
+      paper: colors.grey[50],
+    },
+    divider: colors.grey[300],
+    action: {
+      active: colors.purple[700],
+      hover: colors.purple[50],
+      selected: colors.purple[100],
+      disabled: colors.grey[500],
+      disabledBackground: colors.grey[200],
+    },
+  },
   typography: {
     fontFamily: '"HclTechRoobert", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
       fontSize: "2.5rem",
-      fontWeight: 600,
+      fontWeight: 700,
+      lineHeight: 1.2,
+      color: colors.grey.A400,
     },
-    // ... all typography settings
+    h2: {
+      fontSize: "2rem",
+      fontWeight: 700,
+      lineHeight: 1.3,
+      color: colors.grey.A400,
+    },
+    h3: {
+      fontSize: "1.75rem",
+      fontWeight: 600,
+      lineHeight: 1.4,
+      color: colors.grey.A400,
+    },
+    h4: {
+      fontSize: "1.5rem",
+      fontWeight: 600,
+      lineHeight: 1.4,
+      color: colors.grey.A400,
+    },
+    h5: {
+      fontSize: "1.25rem",
+      fontWeight: 600,
+      lineHeight: 1.5,
+      color: colors.grey.A400,
+    },
+    h6: {
+      fontSize: "1rem",
+      fontWeight: 600,
+      lineHeight: 1.6,
+      color: colors.grey.A400,
+    },
+    subtitle1: {
+      fontSize: "1rem",
+      fontWeight: 500,
+      lineHeight: 1.75,
+    },
+    subtitle2: {
+      fontSize: "0.875rem",
+      fontWeight: 500,
+      lineHeight: 1.57,
+    },
+    body1: {
+      fontSize: "1rem",
+      fontWeight: 400,
+      lineHeight: 1.5,
+    },
+    body2: {
+      fontSize: "0.875rem",
+      fontWeight: 400,
+      lineHeight: 1.43,
+    },
+    button: {
+      fontSize: "0.875rem",
+      fontWeight: 600,
+      lineHeight: 1.75,
+      textTransform: "none",
+    },
+    caption: {
+      fontSize: "0.75rem",
+      fontWeight: 400,
+      lineHeight: 1.66,
+    },
+    overline: {
+      fontSize: "0.75rem",
+      fontWeight: 600,
+      lineHeight: 2.66,
+      textTransform: "uppercase",
+    },
+  },
+  spacing: 8,
+  shape: {
+    borderRadius: 8,
   },
   components: {
     MuiCssBaseline: {
@@ -106,15 +338,124 @@ export const getThemeOptions = (): ThemeOptions => ({
         }
       `,
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          textTransform: "none",
+          fontWeight: 600,
+          padding: "8px 20px",
+        },
+        contained: {
+          boxShadow: "none",
+          "&:hover": {
+            boxShadow: "none",
+          },
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: "0px 2px 8px rgba(29, 33, 35, 0.08)",
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          fontWeight: 500,
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            borderRadius: 8,
+          },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        rounded: {
+          borderRadius: 12,
+        },
+      },
+    },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+        },
+      },
+    },
   },
 });
 
 export const lightTheme = createTheme(getThemeOptions());
 
+// Dark theme with HCL colors
 export const darkTheme = createTheme({
   ...getThemeOptions(),
   palette: {
     mode: "dark",
-    // ... dark mode overrides
+    primary: {
+      main: colors.purple[400],
+      light: colors.purple[300],
+      dark: colors.purple[600],
+      contrastText: "#FFFFFF",
+    },
+    secondary: {
+      main: colors.blue[400],
+      light: colors.blue[300],
+      dark: colors.blue[600],
+      contrastText: "#FFFFFF",
+    },
+    error: {
+      main: colors.coral[500],
+      light: colors.coral[300],
+      dark: colors.coral[700],
+      contrastText: "#FFFFFF",
+    },
+    warning: {
+      main: colors.yellow[400],
+      light: colors.yellow[200],
+      dark: colors.yellow[700],
+      contrastText: colors.grey.A400,
+    },
+    info: {
+      main: colors.blue[500],
+      light: colors.blue[300],
+      dark: colors.blue[800],
+      contrastText: "#FFFFFF",
+    },
+    success: {
+      main: colors.green[500],
+      light: colors.green[300],
+      dark: colors.green[700],
+      contrastText: "#FFFFFF",
+    },
+    grey: colors.grey,
+    text: {
+      primary: colors.grey[50],
+      secondary: colors.grey[300],
+      disabled: colors.grey[600],
+    },
+    background: {
+      default: colors.grey.A400,
+      paper: colors.grey.A200,
+    },
+    divider: colors.grey.A100,
+    action: {
+      active: colors.purple[400],
+      hover: colors.purple[900],
+      selected: colors.purple[800],
+      disabled: colors.grey[700],
+      disabledBackground: colors.grey.A100,
+    },
   },
 });
