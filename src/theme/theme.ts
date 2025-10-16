@@ -2,17 +2,6 @@ import type { ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 
 export const getThemeOptions = (): ThemeOptions => ({
-  palette: {
-    primary: {
-      main: "#aa19d2ff",
-      light: "#42f55aff",
-      dark: "#544824ff",
-    },
-    secondary: {
-      main: "#dc004e",
-    },
-    // ... all your color definitions
-  },
   typography: {
     fontFamily: '"HclTechRoobert", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
@@ -117,27 +106,7 @@ export const getThemeOptions = (): ThemeOptions => ({
         }
       `,
     },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-          textTransform: "none",
-        },
-      },
-      defaultProps: {
-        disableElevation: true,
-      },
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 12,
-        },
-      },
-    },
-    // ... all component customizations
   },
-  spacing: 8, // base spacing unit
 });
 
 export const lightTheme = createTheme(getThemeOptions());
