@@ -465,12 +465,21 @@ export const getThemeOptions = (): ThemeOptions => ({
     MuiTouchRipple: {
       styleOverrides: {
         root: {
-          '& .MuiTouchRipple-child': {
-            backgroundColor: "rgba(0, 0, 0, 0.14)"
-          }
-        }
-      }
-    }
+          "& .MuiTouchRipple-child": {
+            backgroundColor: "rgba(0, 0, 0, 0.14)",
+          },
+        },
+      },
+    },
+    MuiCircularProgress: {
+      styleOverrides: {
+        root: {
+          ".MuiCircularProgress-circle": {
+            strokeLinecap: "round",
+          },
+        },
+      },
+    },
     // ... all component customizations
   },
 });
