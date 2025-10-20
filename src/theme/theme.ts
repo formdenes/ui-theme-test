@@ -416,7 +416,7 @@ export const getThemeOptions = (): ThemeOptions => ({
     MuiTabs: {
       styleOverrides: {
         indicator: {
-          display: 'none',
+          display: "none",
         },
         root: {
           background: colors.grey[100],
@@ -426,10 +426,15 @@ export const getThemeOptions = (): ThemeOptions => ({
           minHeight: "auto",
           padding: 0,
           width: "auto",
-        }
-      }
+        },
+      },
     },
     MuiTab: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        disableTouchRipple: true,
+      },
       styleOverrides: {
         root: {
           alignItems: "center",
@@ -445,11 +450,17 @@ export const getThemeOptions = (): ThemeOptions => ({
           "&.Mui-selected": {
             backgroundColor: "white",
             borderColor: "white",
-            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);",
-            color: "inherit"
+            boxShadow:
+              "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);",
+            color: "inherit",
           },
-        }
-      }
+          "&.Mui-focusVisible": {
+            borderColor: colors.grey[200],
+            borderWidth: "1px",
+            borderStyle: "solid",
+          },
+        },
+      },
     },
     MuiTouchRipple: {
       styleOverrides: {
