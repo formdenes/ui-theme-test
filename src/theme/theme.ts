@@ -407,7 +407,7 @@ export const getThemeOptions = (): ThemeOptions => ({
           height: "40px",
           minHeight: "auto",
           padding: 0,
-          width: "auto",
+          width: "100%",
         }
       }
     },
@@ -416,18 +416,20 @@ export const getThemeOptions = (): ThemeOptions => ({
         root: {
           alignItems: "center",
           border: "1px solid transparent",
-          borderRadius: "12px",
+          borderRadius: "8px",
           color: colors.grey.A400,
-          fontSize: "12.25px",
-          margin: ".25rem",
+          flex: 1,
+          fontSize: "16px",
+          fontWeight: "normal",
+          margin: "4px 1px",
           minHeight: "auto",
-          minWidth: "126px",
-          padding: "7px 10.5px",
+          minWidth: "30px",
+          padding: "5px 0",
           textTransform: "capitalize",
           "&.Mui-selected": {
             backgroundColor: "white",
             borderColor: "white",
-            boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);",
+            boxShadow: "0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);",
             color: "inherit"
           },
         }
