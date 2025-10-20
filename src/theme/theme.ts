@@ -1,4 +1,4 @@
-import type { ThemeOptions } from "@mui/material/styles";
+import type { Theme, ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 
 // HCL Color Palette - exported for use in custom components
@@ -102,7 +102,6 @@ export const colors = {
     A200: "#333A3D",
     A400: "#1D2123",
     A700: "#000000",
-    
   },
 };
 
@@ -341,6 +340,11 @@ export const getThemeOptions = (): ThemeOptions => ({
       `,
     },
     MuiButton: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        disableTouchRipple: true,
+      },
       styleOverrides: {
         root: {
           borderRadius: 8,
@@ -348,12 +352,25 @@ export const getThemeOptions = (): ThemeOptions => ({
           fontWeight: 600,
           padding: "8px 20px",
         },
-        contained: {
-          boxShadow: "none",
-          "&:hover": {
-            boxShadow: "none",
-          },
-        },
+        contained: ({ theme }) => ({
+          variants: [
+            {
+              props: { variant: "contained", color: "primary" },
+              style: {
+                "&:hover": {
+                  backgroundColor: theme.vars.palette.primary.light,
+                },
+              },
+            },
+          ],
+        }),
+        // contained: ({ theme }) => ({
+        //   boxShadow: "none",
+        //   "&:hover": {
+        //     boxShadow: "none",
+        //     // backgroundColor: theme.vari,
+        //   },
+        // }),
       },
     },
     MuiCard: {
@@ -398,7 +415,7 @@ export const getThemeOptions = (): ThemeOptions => ({
     MuiTabs: {
       styleOverrides: {
         indicator: {
-          display: 'none',
+          display: "none",
         },
         root: {
           background: colors.grey[100],
@@ -412,6 +429,11 @@ export const getThemeOptions = (): ThemeOptions => ({
       }
     },
     MuiTab: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        disableTouchRipple: true,
+      },
       styleOverrides: {
         root: {
           alignItems: "center",
@@ -432,18 +454,32 @@ export const getThemeOptions = (): ThemeOptions => ({
             boxShadow: "0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);",
             color: "inherit"
           },
-        }
-      }
+          "&.Mui-focusVisible": {
+            borderColor: colors.grey[200],
+            borderWidth: "1px",
+            borderStyle: "solid",
+          },
+        },
+      },
     },
     MuiTouchRipple: {
       styleOverrides: {
         root: {
-          '& .MuiTouchRipple-child': {
-            backgroundColor: "rgba(0, 0, 0, 0.14)"
-          }
-        }
-      }
-    }
+          "& .MuiTouchRipple-child": {
+            backgroundColor: "rgba(0, 0, 0, 0.14)",
+          },
+        },
+      },
+    },
+    MuiCircularProgress: {
+      styleOverrides: {
+        root: {
+          ".MuiCircularProgress-circle": {
+            strokeLinecap: "round",
+          },
+        },
+      },
+    },
     // ... all component customizations
   },
 });
