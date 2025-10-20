@@ -341,6 +341,11 @@ export const getThemeOptions = (): ThemeOptions => ({
       `,
     },
     MuiButton: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        disableTouchRipple: true,
+      },
       styleOverrides: {
         root: {
           borderRadius: 8,
@@ -348,12 +353,25 @@ export const getThemeOptions = (): ThemeOptions => ({
           fontWeight: 600,
           padding: "8px 20px",
         },
-        contained: {
-          boxShadow: "none",
-          "&:hover": {
-            boxShadow: "none",
-          },
-        },
+        contained: ({ theme }) => ({
+          variants: [
+            {
+              props: { variant: "contained", color: "primary" },
+              style: {
+                "&:hover": {
+                  backgroundColor: theme.vars.palette.primary.light,
+                },
+              },
+            },
+          ],
+        }),
+        // contained: ({ theme }) => ({
+        //   boxShadow: "none",
+        //   "&:hover": {
+        //     boxShadow: "none",
+        //     // backgroundColor: theme.vari,
+        //   },
+        // }),
       },
     },
     MuiCard: {
