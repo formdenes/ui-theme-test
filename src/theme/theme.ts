@@ -1,4 +1,4 @@
-import type { ThemeOptions } from "@mui/material/styles";
+import type { Theme, ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 
 // HCL Color Palette - exported for use in custom components
@@ -102,7 +102,6 @@ export const colors = {
     A200: "#333A3D",
     A400: "#1D2123",
     A700: "#000000",
-    
   },
 };
 
