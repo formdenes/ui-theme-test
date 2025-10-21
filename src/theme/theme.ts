@@ -241,7 +241,7 @@ export const getThemeOptions = (): ThemeOptions => ({
   },
   spacing: 8,
   shape: {
-    borderRadius: 8,
+    borderRadius: 6,
   },
   components: {
     MuiCssBaseline: {
@@ -347,7 +347,6 @@ export const getThemeOptions = (): ThemeOptions => ({
       },
       styleOverrides: {
         root: {
-          borderRadius: 8,
           textTransform: "none",
           fontWeight: 600,
           padding: "8px 20px",
@@ -478,6 +477,32 @@ export const getThemeOptions = (): ThemeOptions => ({
           ".MuiCircularProgress-circle": {
             strokeLinecap: "round",
           },
+        },
+      },
+    },
+    MuiTooltip: {
+      defaultProps: {
+        arrow: true,
+        slotProps: {
+          popper: {
+            modifiers: [
+              {
+                name: "offset",
+                options: {
+                  offset: [0, -6],
+                },
+              },
+            ],
+          },
+        },
+      },
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: colors.grey.A400,
+          padding: "6px 8px",
+        },
+        arrow: {
+          color: colors.grey.A400,
         },
       },
     },
