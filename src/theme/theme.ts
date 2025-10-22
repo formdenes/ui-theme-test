@@ -506,6 +506,65 @@ export const getThemeOptions = (): ThemeOptions => ({
         },
       },
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: colors.grey.A400,
+          fontSize: "14px",
+          fontWeight: 500,
+          marginBottom: "5px"
+        }
+      }
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: colors.grey.A400,
+          fontSize: "14px",
+          fontWeight: 500,
+          marginBottom: "5px"
+        }
+      }
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          border: `1px solid ${colors.grey[200]}`,
+          borderRadius: "8px",
+          color: colors.grey.A400,
+          fontSize: "14px",
+          padding: "2.5px 7.5px",
+          width: "100%",
+          "&::before": {
+            display: "none"
+          },
+          "&::after": {
+            display: "none"
+          },
+          "&.Mui-focused": {
+            borderColor: "transparent",
+            background: "linear-gradient(to right, white, white),linear-gradient(to right, #7ABEF7 14.04% , #572AC2 83.84%)",
+            backgroundClip: "padding-box, border-box",
+            backgroundOrigin: "padding-box, border-box"
+          },
+        }
+      }
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          //border: `1px solid ${colors.grey[200]}`,
+        }
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        input: {
+          fontStyle: "normal",
+          padding: '4.5px 7.5px',
+        }
+      }
+    }
     // ... all component customizations
   },
 });

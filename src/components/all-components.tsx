@@ -5,7 +5,8 @@ import {
   Button,
   IconButton,
   Fab,
-  TextField,
+  Input,
+  InputLabel,
   Select,
   MenuItem,
   Checkbox,
@@ -205,89 +206,14 @@ export default function AllMaterialUIComponents() {
         </Typography>
 
         <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Text Field Variants
-          </Typography>
-          <Stack spacing={2}>
-            <TextField label="Filled" variant="filled" />
-            <TextField label="Outlined" variant="outlined" />
-            <TextField label="Standard" variant="standard" />
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Text Field Sizes & Colors
-          </Typography>
-          <Stack spacing={2}>
-            {sizes.map((size) => (
-              <TextField
-                key={size}
-                label={`Size: ${size}`}
-                variant="outlined"
-                size={size}
-              />
-            ))}
-            <TextField
-              label="Primary Color"
-              color="primary"
-              variant="outlined"
-            />
-            <TextField
-              label="Secondary Color"
-              color="secondary"
-              variant="outlined"
-            />
-            <TextField
-              label="Success Color"
-              color="success"
-              variant="outlined"
-            />
-            <TextField
-              label="Error"
-              error
-              helperText="This is an error"
-              variant="outlined"
-            />
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Text Field with Adornments
-          </Typography>
-          <Stack spacing={2}>
-            <TextField
-              label="With Start Icon"
-              variant="outlined"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <span>🔍</span>
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <TextField
-              label="With End Icon"
-              variant="outlined"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <span>👤</span>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Stack>
+          <InputLabel>Input Label</InputLabel>
+          <Input></Input>
         </Box>
 
         <Box>
-          <Typography variant="h6" gutterBottom>
-            Select
-          </Typography>
           <Stack spacing={2}>
             <FormControl fullWidth>
+              <FormLabel>Select Label</FormLabel>
               <Select
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
@@ -299,18 +225,6 @@ export default function AllMaterialUIComponents() {
                 <MenuItem value={10}>Ten</MenuItem>
                 <MenuItem value={20}>Twenty</MenuItem>
                 <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-            <FormControl fullWidth size="small">
-              <Select
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-                displayEmpty
-              >
-                <MenuItem value="">
-                  <em>Small Size</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
               </Select>
             </FormControl>
           </Stack>
