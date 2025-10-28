@@ -219,12 +219,10 @@ export default function AllMaterialUIComponents() {
                 onChange={(e) => setAge(e.target.value)}
                 displayEmpty
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={1}>Item 1</MenuItem>
+                <MenuItem value={2}>Item 2</MenuItem>
+                <MenuItem value={3}>Item 3</MenuItem>
+                <MenuItem value={4}>Item 4</MenuItem>
               </Select>
             </FormControl>
           </Stack>
@@ -256,7 +254,7 @@ export default function AllMaterialUIComponents() {
           </Stack>
         </Box>
 
-        <Box sx={{ mb: 3 }}>
+        {/* <Box sx={{ mb: 3 }}>
           <Typography variant="h6" gutterBottom>
             Radio Buttons
           </Typography>
@@ -277,7 +275,7 @@ export default function AllMaterialUIComponents() {
               ))}
             </RadioGroup>
           </FormControl>
-        </Box>
+        </Box> */}
 
         <Box sx={{ mb: 3 }}>
           <Typography variant="h6" gutterBottom>
@@ -292,63 +290,6 @@ export default function AllMaterialUIComponents() {
               />
             ))}
             <FormControlLabel control={<Switch size="small" />} label="Small" />
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Sliders
-          </Typography>
-          <Stack spacing={3} sx={{ width: "100%", maxWidth: 400 }}>
-            {colors.map((color) => (
-              <Box key={color}>
-                <Typography variant="body2" gutterBottom>
-                  {color}
-                </Typography>
-                <Slider
-                  value={sliderValue}
-                  onChange={(_, newValue) => setSliderValue(newValue as number)}
-                  color={color}
-                />
-              </Box>
-            ))}
-            <Box>
-              <Typography variant="body2" gutterBottom>
-                Small Size
-              </Typography>
-              <Slider size="small" defaultValue={30} />
-            </Box>
-          </Stack>
-        </Box>
-
-        <Box>
-          <Typography variant="h6" gutterBottom>
-            Rating
-          </Typography>
-          <Stack spacing={2}>
-            {colors.map((color) => (
-              <Box
-                key={color}
-                sx={{ display: "flex", alignItems: "center", gap: 2 }}
-              >
-                <Typography variant="body2" sx={{ minWidth: 80 }}>
-                  {color}:
-                </Typography>
-                <Rating name={color} defaultValue={3} />
-              </Box>
-            ))}
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <Typography variant="body2" sx={{ minWidth: 80 }}>
-                Small:
-              </Typography>
-              <Rating name="small" defaultValue={3} size="small" />
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <Typography variant="body2" sx={{ minWidth: 80 }}>
-                Large:
-              </Typography>
-              <Rating name="large" defaultValue={3} size="large" />
-            </Box>
           </Stack>
         </Box>
       </Paper>

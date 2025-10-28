@@ -553,18 +553,116 @@ export const getThemeOptions = (): ThemeOptions => ({
     MuiSelect: {
       styleOverrides: {
         root: {
-          //border: `1px solid ${colors.grey[200]}`,
+          border: "none",
+          borderRadius: "8px",
+          fontStyle: "normal",
+          "& .MuiOutlinedInput-notchedOutline" :{
+            border: `1px solid ${colors.grey[200]}`,
+          },
+          "&:hover": {
+            "& .MuiOutlinedInput-notchedOutline": {
+              border: `1px solid ${colors.grey[200]}`,
+            }, 
+          },
+          "&.Mui-focused": {
+            backgroundColor: "red",
+            border: `none`,
+            "& .MuiOutlinedInput-notchedOutline": {
+              border: `1px solid ${colors.grey[200]}`,
+            },
+            "& .MuiSelect-icon": {
+              color: colors.grey[200],
+            },
+          }
         }
       }
     },
     MuiOutlinedInput: {
       styleOverrides: {
         input: {
-          fontStyle: "normal",
-          padding: '4.5px 7.5px',
+          padding: "4.5px 7.5px",
+        },
+        root: {
+          border: `1px solid ${colors.grey[200]}`,
         }
       }
-    }
+    },
+    MuiMenu: {
+      styleOverrides: {
+        root: {
+          marginTop: "5px"
+        },
+        paper: {
+          borderRadius: "8px",
+          boxShadow: "0 8px 24px rgba(0, 0, 0, 0.12)",
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontStyle: "normal",
+          fontSize: "14px"
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          /* border: `1px solid ${colors.grey[200]}`,
+          borderRadius: "4px",
+          marginLeft: "10px",
+          padding: "6px", */
+
+          "&.Mui-checked": {
+            //backgroundColor: colors.purple[800],
+          },
+          
+          "& .MuiSvgIcon-root": {
+            //display: "none",
+            //border: `1px solid ${colors.grey[200]}`,
+            borderRadius: "4px",
+            width: "18px",
+            height: "18px"
+          },
+        }
+      }
+    },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          "& .MuiFormControlLabel-label": {
+            fontSize: "12px"
+          },
+        }
+      }
+    },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          width: "26px",
+          height: "16px",
+          backgroundColor: colors.grey[100],
+          borderRadius: "25px",
+          padding: 0
+        },
+        switchBase: {
+          padding: 1,
+          '&.Mui-checked': {
+            transform: 'translateX(10px)',
+            backgroundColor: colors.purple[800],
+            '& + .MuiSwitch-track': {
+              opacity: 1,
+            },
+          },
+        },
+        thumb: {
+          width: 14,
+          height: 14,
+          backgroundColor: "white",
+        },
+      },
+    },
     // ... all component customizations
   },
 });
