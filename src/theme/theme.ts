@@ -358,7 +358,24 @@ export const getThemeOptions = (): ThemeOptions => ({
           textTransform: "none",
           fontSize: "12.25px",
           fontWeight: "normal",
-          padding: "8px 20px",
+
+          "&.MuiButton-outlined": {
+            borderColor: "transparent",
+            background:
+              "linear-gradient(to right, white, white),linear-gradient(to right,#5F1EBE 10% , #3C91FF 100%)",
+            backgroundClip: "padding-box, border-box",
+            backgroundOrigin: "padding-box, border-box",
+            color: colors.grey.A400,
+          },
+          "&.MuiButton-sizeSmall": {
+            height: "28px",
+          },
+          "&.MuiButton-sizeMedium": {
+            height: "31.5px",
+          },
+          "&.MuiButton-sizeLarge": {
+            height: "38.5px",
+          },
         },
         contained: ({ theme }) => ({
           variants: [
@@ -368,6 +385,7 @@ export const getThemeOptions = (): ThemeOptions => ({
                 "&:hover": {
                   backgroundColor: theme.vars.palette.primary.light,
                 },
+                //"&."
               },
             },
           ],
@@ -410,7 +428,7 @@ export const getThemeOptions = (): ThemeOptions => ({
       styleOverrides: {
         rounded: {
           borderRadius: 12,
-          boxShadow: "0 2px 40px #00000014"
+          boxShadow: "0 2px 40px #00000014",
         },
       },
     },
@@ -435,8 +453,8 @@ export const getThemeOptions = (): ThemeOptions => ({
           minHeight: "auto",
           padding: 0,
           width: "100%",
-        }
-      }
+        },
+      },
     },
     MuiTab: {
       defaultProps: {
@@ -461,8 +479,9 @@ export const getThemeOptions = (): ThemeOptions => ({
           "&.Mui-selected": {
             backgroundColor: "white",
             borderColor: "white",
-            boxShadow: "0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);",
-            color: "inherit"
+            boxShadow:
+              "0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);",
+            color: "inherit",
           },
           "&.Mui-focusVisible": {
             borderColor: colors.grey[200],
@@ -522,9 +541,9 @@ export const getThemeOptions = (): ThemeOptions => ({
           color: colors.grey.A400,
           fontSize: "14px",
           fontWeight: 500,
-          marginBottom: "5px"
-        }
-      }
+          marginBottom: "5px",
+        },
+      },
     },
     MuiFormLabel: {
       styleOverrides: {
@@ -532,9 +551,9 @@ export const getThemeOptions = (): ThemeOptions => ({
           color: colors.grey.A400,
           fontSize: "14px",
           fontWeight: 500,
-          marginBottom: "5px"
-        }
-      }
+          marginBottom: "5px",
+        },
+      },
     },
     MuiInputBase: {
       styleOverrides: {
@@ -546,19 +565,20 @@ export const getThemeOptions = (): ThemeOptions => ({
           padding: "2.5px 7.5px",
           width: "100%",
           "&::before": {
-            display: "none"
+            display: "none",
           },
           "&::after": {
-            display: "none"
+            display: "none",
           },
           "&.Mui-focused": {
             borderColor: "transparent",
-            background: "linear-gradient(to right, white, white),linear-gradient(to right, #7ABEF7 14.04% , #572AC2 83.84%)",
+            background:
+              "linear-gradient(to right, white, white),linear-gradient(to right, #7ABEF7 14.04% , #572AC2 83.84%)",
             backgroundClip: "padding-box, border-box",
-            backgroundOrigin: "padding-box, border-box"
+            backgroundOrigin: "padding-box, border-box",
           },
-        }
-      }
+        },
+      },
     },
     MuiSelect: {
       styleOverrides: {
@@ -566,13 +586,13 @@ export const getThemeOptions = (): ThemeOptions => ({
           border: "none",
           borderRadius: "8px",
           fontStyle: "normal",
-          "& .MuiOutlinedInput-notchedOutline" :{
+          "& .MuiOutlinedInput-notchedOutline": {
             border: `1px solid ${colors.grey[200]}`,
           },
           "&:hover": {
             "& .MuiOutlinedInput-notchedOutline": {
               border: `1px solid ${colors.grey[200]}`,
-            }, 
+            },
           },
           "&.Mui-focused": {
             backgroundColor: "red",
@@ -583,9 +603,9 @@ export const getThemeOptions = (): ThemeOptions => ({
             "& .MuiSelect-icon": {
               color: colors.grey[200],
             },
-          }
-        }
-      }
+          },
+        },
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
@@ -594,13 +614,13 @@ export const getThemeOptions = (): ThemeOptions => ({
         },
         root: {
           border: `1px solid ${colors.grey[200]}`,
-        }
-      }
+        },
+      },
     },
     MuiMenu: {
       styleOverrides: {
         root: {
-          marginTop: "5px"
+          marginTop: "5px",
         },
         paper: {
           borderRadius: "8px",
@@ -612,7 +632,7 @@ export const getThemeOptions = (): ThemeOptions => ({
       styleOverrides: {
         root: {
           fontStyle: "normal",
-          fontSize: "14px"
+          fontSize: "14px",
         },
       },
     },
@@ -627,25 +647,25 @@ export const getThemeOptions = (): ThemeOptions => ({
           "&.Mui-checked": {
             //backgroundColor: colors.purple[800],
           },
-          
+
           "& .MuiSvgIcon-root": {
             //display: "none",
             //border: `1px solid ${colors.grey[200]}`,
             borderRadius: "4px",
             width: "18px",
-            height: "18px"
+            height: "18px",
           },
-        }
-      }
+        },
+      },
     },
     MuiFormControlLabel: {
       styleOverrides: {
         root: {
           "& .MuiFormControlLabel-label": {
-            fontSize: "12px"
+            fontSize: "12px",
           },
-        }
-      }
+        },
+      },
     },
     MuiSwitch: {
       styleOverrides: {
@@ -654,14 +674,14 @@ export const getThemeOptions = (): ThemeOptions => ({
           height: "16px",
           backgroundColor: colors.grey[100],
           borderRadius: "25px",
-          padding: 0
+          padding: 0,
         },
         switchBase: {
           padding: 1,
-          '&.Mui-checked': {
-            transform: 'translateX(10px)',
+          "&.Mui-checked": {
+            transform: "translateX(10px)",
             backgroundColor: colors.purple[800],
-            '& + .MuiSwitch-track': {
+            "& + .MuiSwitch-track": {
               opacity: 1,
             },
           },

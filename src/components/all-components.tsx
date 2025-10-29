@@ -101,13 +101,26 @@ export default function AllMaterialUIComponents() {
         </Typography>
 
         <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Contained Buttons
-          </Typography>
           <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-          <Button key={"e"} variant="contained">
-                Button
-              </Button>
+            <Button variant="contained">Regular button</Button>
+            <Button variant="contained" disabled={true}>
+              Disabled button
+            </Button>
+            <Button variant="outlined">Outlined button</Button>
+            <Button variant="contained">Disabled button</Button>
+          </Stack>
+        </Box>
+        <Box sx={{ mb: 3 }}>
+          <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+            <Button variant="contained" size="small">
+              Small button
+            </Button>
+            <Button variant="contained" size="medium">
+              Medium button
+            </Button>
+            <Button variant="contained" size="large">
+              Large button
+            </Button>
           </Stack>
         </Box>
       </Paper>
@@ -139,9 +152,12 @@ export default function AllMaterialUIComponents() {
         </Box>
         <Box sx={{ mb: 3 }}>
           <Box sx={{ mb: 3 }}>
-          <Stack>
-            <FormControlLabel control={<Checkbox defaultChecked />} label={"checkbox"} />
-          </Stack>
+            <Stack>
+              <FormControlLabel
+                control={<Checkbox defaultChecked />}
+                label={"checkbox"}
+              />
+            </Stack>
           </Box>
           <Stack>
             <FormControlLabel control={<Switch />} label="switch " />
