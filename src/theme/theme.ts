@@ -347,8 +347,11 @@ export const getThemeOptions = (): ThemeOptions => ({
       },
       styleOverrides: {
         root: {
+          borderRadius: "8px",
+          boxShadow: "none",
           textTransform: "none",
-          fontWeight: 600,
+          fontSize: "12.25px",
+          fontWeight: "normal",
           padding: "8px 20px",
         },
         contained: ({ theme }) => ({
@@ -401,6 +404,7 @@ export const getThemeOptions = (): ThemeOptions => ({
       styleOverrides: {
         rounded: {
           borderRadius: 12,
+          boxShadow: "0 2px 40px #00000014"
         },
       },
     },
