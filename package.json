@@ -12,7 +12,8 @@
     }
   },
   "files": [
-    "src"
+    "src",
+    "public"
   ],
   "types": "src/index.d.ts",
   "scripts": {
