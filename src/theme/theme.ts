@@ -1,6 +1,12 @@
 import type { Theme, ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
+import type { ToggleButtonGroupPropsSizeOverrides } from "@mui/material/ToggleButtonGroup";
 
+declare module "@mui/material/ToggleButtonGroup" {
+  interface ToggleButtonGroupPropsSizeOverrides {
+    mini: true;
+  }
+}
 // HCL Color Palette - exported for use in custom components
 export const colors = {
   purple: {
