@@ -105,115 +105,25 @@ export default function AllMaterialUIComponents() {
             Contained Buttons
           </Typography>
           <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-            {colors.map((color) => (
-              <Button key={color} variant="contained" color={color}>
-                {color}
+          <Button key={"e"} variant="contained">
+                Button
               </Button>
-            ))}
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Outlined Buttons
-          </Typography>
-          <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-            {colors.map((color) => (
-              <Button key={color} variant="outlined" color={color}>
-                {color}
-              </Button>
-            ))}
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Text Buttons
-          </Typography>
-          <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-            {colors.map((color) => (
-              <Button key={color} variant="text" color={color}>
-                {color}
-              </Button>
-            ))}
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Button Sizes (Primary)
-          </Typography>
-          <Stack direction="row" spacing={2} alignItems="center">
-            {sizes.map((size) => (
-              <Button key={size} variant="contained" size={size}>
-                {size}
-              </Button>
-            ))}
-            <Button variant="contained" size="large">
-              large
-            </Button>
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Buttons with Icons
-          </Typography>
-          <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-            <Button variant="contained" startIcon={<span>💾</span>}>
-              Save
-            </Button>
-            <Button variant="contained" endIcon={<span>🗑️</span>} color="error">
-              Delete
-            </Button>
-            <Button variant="outlined" startIcon={<span>➕</span>}>
-              Add
-            </Button>
-          </Stack>
-        </Box>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Icon Buttons
-          </Typography>
-          <Stack direction="row" spacing={2}>
-            {colors.map((color) => (
-              <IconButton key={color} color={color}>
-                <span>❤️</span>
-              </IconButton>
-            ))}
-          </Stack>
-        </Box>
-
-        <Box>
-          <Typography variant="h6" gutterBottom>
-            Floating Action Buttons (FAB)
-          </Typography>
-          <Stack direction="row" spacing={2} alignItems="center">
-            {colors.map((color) => (
-              <Fab key={color} color={color} size="small">
-                <span>➕</span>
-              </Fab>
-            ))}
           </Stack>
         </Box>
       </Paper>
-
-      {/* Inputs Section */}
       <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
         <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
-          Text Fields & Inputs
+          Form items
         </Typography>
 
         <Box sx={{ mb: 3 }}>
-          <InputLabel>Input Label</InputLabel>
+          <InputLabel>Input</InputLabel>
           <Input></Input>
         </Box>
-
         <Box>
           <Stack spacing={2}>
             <FormControl fullWidth>
-              <FormLabel>Select Label</FormLabel>
+              <FormLabel>Select</FormLabel>
               <Select
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
@@ -227,69 +137,14 @@ export default function AllMaterialUIComponents() {
             </FormControl>
           </Stack>
         </Box>
-      </Paper>
-
-      {/* Form Controls Section */}
-      <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
-        <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
-          Form Controls
-        </Typography>
-
         <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Checkboxes
-          </Typography>
-          <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-            {colors.map((color) => (
-              <FormControlLabel
-                key={color}
-                control={<Checkbox defaultChecked color={color} />}
-                label={color}
-              />
-            ))}
-            <FormControlLabel
-              control={<Checkbox size="small" />}
-              label="Small"
-            />
+          <Box sx={{ mb: 3 }}>
+          <Stack>
+            <FormControlLabel control={<Checkbox defaultChecked />} label={"checkbox"} />
           </Stack>
-        </Box>
-
-        {/* <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Radio Buttons
-          </Typography>
-          <FormControl>
-            <FormLabel>Gender</FormLabel>
-            <RadioGroup
-              row
-              value={radioValue}
-              onChange={(e) => setRadioValue(e.target.value)}
-            >
-              {colors.map((color) => (
-                <FormControlLabel
-                  key={color}
-                  value={color}
-                  control={<Radio color={color} />}
-                  label={color}
-                />
-              ))}
-            </RadioGroup>
-          </FormControl>
-        </Box> */}
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Switches
-          </Typography>
-          <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-            {colors.map((color) => (
-              <FormControlLabel
-                key={color}
-                control={<Switch defaultChecked color={color} />}
-                label={color}
-              />
-            ))}
-            <FormControlLabel control={<Switch size="small" />} label="Small" />
+          </Box>
+          <Stack>
+            <FormControlLabel control={<Switch />} label="switch " />
           </Stack>
         </Box>
       </Paper>
