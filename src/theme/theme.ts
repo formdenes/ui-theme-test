@@ -1,6 +1,8 @@
-import type { Theme, ThemeOptions } from "@mui/material/styles";
+import type { ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import type { ToggleButtonGroupPropsSizeOverrides } from "@mui/material/ToggleButtonGroup";
+import { AccordionExpandIcon } from "../components/CustomComponents";
+import React from "react";
 
 declare module "@mui/material/ToggleButtonGroup" {
   interface ToggleButtonGroupPropsSizeOverrides {
