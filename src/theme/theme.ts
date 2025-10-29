@@ -722,9 +722,34 @@ export const getThemeOptions = (): ThemeOptions => ({
         }),
       },
     },
+    MuiAccordion: {
+      defaultProps: {
+        disableGutters: true,
+      },
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      defaultProps: {
+        expandIcon: React.createElement(AccordionExpandIcon),
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: "8px",
+          "&.Mui-focusVisible": {
+            boxShadow: `0 0 0 3px ${colors.grey[300]}`,
+            backgroundColor: "transparent",
+          },
+        }),
+        expandIconWrapper: ({ theme }) => ({
+          color: theme.vars.palette.text.primary,
+        }),
+      },
+    },
     // ... all component customizations
-    },
-    },
   },
 });
 
