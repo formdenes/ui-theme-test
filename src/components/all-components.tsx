@@ -705,25 +705,79 @@ export default function AllMaterialUIComponents() {
               </ToggleButtonGroup>
             </Box>
           ))}
-          <Box>
-            <Typography variant="body2" gutterBottom>
-              Sizes:
-            </Typography>
-            <Stack direction="row" spacing={2}>
-              <ToggleButtonGroup size="small" value="left" exclusive>
-                <ToggleButton value="left">Small</ToggleButton>
-                <ToggleButton value="right">Small</ToggleButton>
-              </ToggleButtonGroup>
-              <ToggleButtonGroup size="medium" value="left" exclusive>
-                <ToggleButton value="left">Medium</ToggleButton>
-                <ToggleButton value="right">Medium</ToggleButton>
-              </ToggleButtonGroup>
-              <ToggleButtonGroup size="large" value="left" exclusive>
-                <ToggleButton value="left">Large</ToggleButton>
-                <ToggleButton value="right">Large</ToggleButton>
-              </ToggleButtonGroup>
-            </Stack>
-          </Box>
+
+          {/* Size Variants with All Colors */}
+          {[
+            {
+              size: "small",
+              disabledColor: "info",
+              iconColor: "error",
+              icon: "🔔",
+            },
+            {
+              size: "medium",
+              disabledColor: "secondary",
+              iconColor: "success",
+              icon: "✓",
+            },
+            {
+              size: "large",
+              disabledColor: "warning",
+              iconColor: "info",
+              icon: "ℹ",
+            },
+            {
+              size: "mini",
+              disabledColor: "warning",
+              iconColor: "info",
+              icon: "ℹ",
+            },
+          ].map(({ size, disabledColor, iconColor, icon }) => (
+            <Box key={size}>
+              <Typography
+                variant="body2"
+                gutterBottom
+                sx={{ textTransform: "capitalize" }}
+              >
+                {size}:
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                {/* Default color (no color prop) */}
+                <ToggleButtonGroup
+                  size={size as any}
+                  value={toggleValue}
+                  onChange={(_, newValue) => setToggleValue(newValue)}
+                  exclusive
+                >
+                  <ToggleButton value="left">Default</ToggleButton>
+                  <ToggleButton value="right">Default</ToggleButton>
+                </ToggleButtonGroup>
+
+                {/* All color variants */}
+                {colors.map((color) => (
+                  <ToggleButtonGroup
+                    key={color}
+                    size={size as any}
+                    value={toggleValue}
+                    onChange={(_, newValue) => setToggleValue(newValue)}
+                    exclusive
+                    color={color}
+                    disabled={color === disabledColor}
+                  >
+                    <ToggleButton value="left">
+                      {color === iconColor && (
+                        <span style={{ marginRight: "4px" }}>{icon}</span>
+                      )}
+                      {color.charAt(0).toUpperCase() + color.slice(1)}
+                    </ToggleButton>
+                    <ToggleButton value="right">
+                      {color.charAt(0).toUpperCase() + color.slice(1)}
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                ))}
+              </Stack>
+            </Box>
+          ))}
         </Stack>
       </Paper>
 

@@ -1,6 +1,12 @@
 import type { Theme, ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
+import type { ToggleButtonGroupPropsSizeOverrides } from "@mui/material/ToggleButtonGroup";
 
+declare module "@mui/material/ToggleButtonGroup" {
+  interface ToggleButtonGroupPropsSizeOverrides {
+    mini: true;
+  }
+}
 // HCL Color Palette - exported for use in custom components
 export const colors = {
   purple: {
@@ -665,6 +671,55 @@ export const getThemeOptions = (): ThemeOptions => ({
           height: 14,
           backgroundColor: "white",
         },
+      },
+    },
+    MuiToggleButtonGroup: {},
+    MuiToggleButton: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        disableTouchRipple: true,
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderColor: colors.grey[200],
+          color: theme.vars.palette.text.primary,
+          fontSize: 14,
+          lineHeight: 1.5,
+          "&.Mui-focusVisible": {
+            boxShadow: `0 0 0 3px var(--focus-ring, ${colors.grey[300]})`,
+          },
+          "&.Mui-disabled": {
+            // color: theme.vars.palette.text.disabled,
+            opacity: 0.5,
+          },
+          "&.MuiToggleButton-sizeMedium": {
+            minHeight: "36px",
+            gap: "8px",
+            padding: "7.5px 8px",
+          },
+          "&.MuiToggleButton-sizeSmall": {
+            minHeight: "32px",
+            gap: "6px",
+            padding: "5.5px 6px",
+          },
+          "&.MuiToggleButton-sizeLarge": {
+            minHeight: "40px",
+            gap: "8px",
+            padding: "9.5px 12px",
+          },
+          variants: [
+            {
+              props: { size: "mini" },
+              style: {
+                minHeight: "24px",
+                gap: "4px",
+                padding: "3px 4px",
+                fontSize: 12,
+              },
+            },
+          ],
+        }),
       },
     },
     // ... all component customizations
