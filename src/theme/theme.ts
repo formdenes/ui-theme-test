@@ -725,67 +725,9 @@ export const getThemeOptions = (): ThemeOptions => ({
     // ... all component customizations
   },
 });
-
-export const lightTheme = createTheme(getThemeOptions());
-
-// Dark theme with HCL colors
-export const darkTheme = createTheme({
-  ...getThemeOptions(),
-  palette: {
-    mode: "dark",
-    primary: {
-      main: colors.purple[400],
-      light: colors.purple[300],
-      dark: colors.purple[600],
-      contrastText: "#FFFFFF",
     },
-    secondary: {
-      main: colors.blue[400],
-      light: colors.blue[300],
-      dark: colors.blue[600],
-      contrastText: "#FFFFFF",
-    },
-    error: {
-      main: colors.coral[500],
-      light: colors.coral[300],
-      dark: colors.coral[700],
-      contrastText: "#FFFFFF",
-    },
-    warning: {
-      main: colors.yellow[400],
-      light: colors.yellow[200],
-      dark: colors.yellow[700],
-      contrastText: colors.grey.A400,
-    },
-    info: {
-      main: colors.blue[500],
-      light: colors.blue[300],
-      dark: colors.blue[800],
-      contrastText: "#FFFFFF",
-    },
-    success: {
-      main: colors.green[500],
-      light: colors.green[300],
-      dark: colors.green[700],
-      contrastText: "#FFFFFF",
-    },
-    grey: colors.grey,
-    text: {
-      primary: colors.grey[50],
-      secondary: colors.grey[300],
-      disabled: colors.grey[600],
-    },
-    background: {
-      default: colors.grey.A400,
-      paper: colors.grey.A200,
-    },
-    divider: colors.grey.A100,
-    action: {
-      active: colors.purple[400],
-      hover: colors.purple[900],
-      selected: colors.purple[800],
-      disabled: colors.grey[700],
-      disabledBackground: colors.grey.A100,
     },
   },
 });
+
+export const hclTheme = createTheme(getThemeOptions());
