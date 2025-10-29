@@ -1,12 +1,8 @@
-import type { Theme, ThemeOptions } from "@mui/material/styles";
+import type { ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import type { ToggleButtonGroupPropsSizeOverrides } from "@mui/material/ToggleButtonGroup";
+import { AccordionExpandIcon } from "../components/CustomComponents";
+import React from "react";
 
-declare module "@mui/material/ToggleButtonGroup" {
-  interface ToggleButtonGroupPropsSizeOverrides {
-    mini: true;
-  }
-}
 // HCL Color Palette - exported for use in custom components
 export const colors = {
   purple: {
@@ -742,70 +738,35 @@ export const getThemeOptions = (): ThemeOptions => ({
         }),
       },
     },
+    MuiAccordion: {
+      defaultProps: {
+        disableGutters: true,
+      },
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      defaultProps: {
+        expandIcon: React.createElement(AccordionExpandIcon),
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: "8px",
+          "&.Mui-focusVisible": {
+            boxShadow: `0 0 0 3px ${colors.grey[300]}`,
+            backgroundColor: "transparent",
+          },
+        }),
+        expandIconWrapper: ({ theme }) => ({
+          color: theme.vars.palette.text.primary,
+        }),
+      },
+    },
     // ... all component customizations
   },
 });
 
-export const lightTheme = createTheme(getThemeOptions());
-
-// Dark theme with HCL colors
-export const darkTheme = createTheme({
-  ...getThemeOptions(),
-  palette: {
-    mode: "dark",
-    primary: {
-      main: colors.purple[400],
-      light: colors.purple[300],
-      dark: colors.purple[600],
-      contrastText: "#FFFFFF",
-    },
-    secondary: {
-      main: colors.blue[400],
-      light: colors.blue[300],
-      dark: colors.blue[600],
-      contrastText: "#FFFFFF",
-    },
-    error: {
-      main: colors.coral[500],
-      light: colors.coral[300],
-      dark: colors.coral[700],
-      contrastText: "#FFFFFF",
-    },
-    warning: {
-      main: colors.yellow[400],
-      light: colors.yellow[200],
-      dark: colors.yellow[700],
-      contrastText: colors.grey.A400,
-    },
-    info: {
-      main: colors.blue[500],
-      light: colors.blue[300],
-      dark: colors.blue[800],
-      contrastText: "#FFFFFF",
-    },
-    success: {
-      main: colors.green[500],
-      light: colors.green[300],
-      dark: colors.green[700],
-      contrastText: "#FFFFFF",
-    },
-    grey: colors.grey,
-    text: {
-      primary: colors.grey[50],
-      secondary: colors.grey[300],
-      disabled: colors.grey[600],
-    },
-    background: {
-      default: colors.grey.A400,
-      paper: colors.grey.A200,
-    },
-    divider: colors.grey.A100,
-    action: {
-      active: colors.purple[400],
-      hover: colors.purple[900],
-      selected: colors.purple[800],
-      disabled: colors.grey[700],
-      disabledBackground: colors.grey.A100,
-    },
-  },
-});
+export const hclTheme = createTheme(getThemeOptions());
