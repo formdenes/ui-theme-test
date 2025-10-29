@@ -723,8 +723,6 @@ export const getThemeOptions = (): ThemeOptions => ({
       },
     },
     // ... all component customizations
-  },
-});
     },
     },
   },
