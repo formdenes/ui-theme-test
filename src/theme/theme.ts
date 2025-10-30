@@ -349,50 +349,171 @@ export const getThemeOptions = (): ThemeOptions => ({
       },
       styleOverrides: {
         root: {
-          borderRadius: "8px",
+          backgroundColor: "transparent",
+          borderRadius: "6px",
           boxShadow: "none",
           textTransform: "none",
-          fontSize: "12.25px",
-          fontWeight: "normal",
-
-          "&.MuiButton-outlined": {
-            borderColor: "transparent",
-            background:
-              "linear-gradient(to right, white, white),linear-gradient(to right,#5F1EBE 10% , #3C91FF 100%)",
-            backgroundClip: "padding-box, border-box",
-            backgroundOrigin: "padding-box, border-box",
-            color: colors.grey.A400,
+          fontSize: "14px",
+          fontWeight: 500,
+          "&:hover": {
+            boxShadow: "none",
           },
-          "&.MuiButton-sizeSmall": {
+          "&.MuiButton-contained": {
+            backgroundColor: colors.purple[700],
+            border: `2px solid ${colors.purple[700]}`,
+
+            "&:hover": {
+              backgroundColor: colors.purple[700],
+              borderColor: colors.purple[200],
+            },
+            "&:focus": {
+              backgroundColor: colors.purple[700],
+              borderColor: colors.grey[400],
+            },
+            "&:disabled": {
+              backgroundColor: colors.purple[200],
+              borderColor: colors.purple[200],
+              color: "white",
+            },
+          },
+          "&.MuiButton-contained.MuiButton-colorSecondary": {
+            backgroundColor: "transparent",
+            border: `1px solid ${colors.purple[700]}`,
+            color: colors.grey.A400,
+            "&:hover": {
+              border: `2px solid ${colors.purple[700]}`,
+            },
+            "&:focus": {
+              border: `3px solid ${colors.purple[700]}`,
+            },
+            "&:disabled": {
+              backgroundColor: colors.grey[100],
+              border: "none",
+              color: colors.grey[800],
+            },
+          },
+          "&.MuiButton-outlined": {
+            backgroundColor: "transparent",
+            border: `1px solid ${colors.grey[200]}`,
+            boxShadow: "0px 1px 2px -1px #0000001A",
+            color: colors.grey.A400,
+
+            "&:hover": {
+              boxShadow: "0px 1px 3px 0px #0000001A",
+            },
+            "&:focus": {
+              boxShadow: "0px 0px 0px 3px #D4D4D4",
+            },
+            "&:disabled": {
+              borderColor: colors.grey[100],
+              color: colors.grey[800],
+            },
+          },
+          "&.MuiButton-ghost": {
+            //backgroundColor: colors.purple[700],
+            border: "3px solid transparent",
+
+            "&:hover": {
+              backgroundColor: colors.grey[200],
+              borderColor: colors.grey[200],
+            },
+            "&:focus": {
+              backgroundColor: "transparent",
+              borderColor: colors.grey[200],
+            },
+            "&:disabled": {
+              color: colors.grey[800],
+            },
+          },
+          "&.MuiButton-destructive": {
+            backgroundColor: "#DC2626",
+            border: `3px solid #DC2626`,
+            color: "white",
+
+            "&:hover": {
+              backgroundColor: "#DC2626",
+            },
+            "&:focus": {
+              backgroundColor: "#DC2626",
+              borderColor: colors.grey[400],
+            },
+            "&:disabled": {
+              backgroundColor: "#ee9292",
+              borderColor: "#ee9292",
+              color: "white",
+            },
+          },
+          "&.MuiButton-hcl": {
+            background: "linear-gradient(90deg, #5F1EBE 10%, #3C91FF 100%)",
+            //border: `3px solid transparent`,
+            color: "white",
+
+            "&:hover": {
+              background: "linear-gradient(90deg, #5F1EBE 10%, #5F1EBE 100%)",
+              borderColor: colors.purple[700],
+            },
+            "&:focus": {
+              background: `linear-gradient(90deg, ${colors.purple[800]} 10%, ${colors.purple[800]} 100%)`,
+              border: `3px solid ${colors.grey[200]}`,
+            },
+            "&:disabled": {
+              background: colors.purple[200],
+              borderColor: colors.purple[200],
+              color: "white",
+            },
+          },
+          "&.MuiButton-ai": {
+            background: "transparent",
+            border: "none",
+            position: "relative",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: "inherit",
+              padding: "1px",
+              background: "linear-gradient(135deg, #7ABEF7 0%, #572AC2 100%)",
+              WebkitMask:
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "xor",
+              maskComposite: "exclude",
+            },
+            /* borderColor: "transparent",
+            background:
+              "linear-gradient(to right, white, white),linear-gradient(to right, #7ABEF7 14.04% , #572AC2 83.84%)",
+            backgroundClip: "padding-box, border-box",
+            backgroundOrigin: "padding-box, border-box", */
+            "&:hover": {
+              background: "linear-gradient(135deg, #764ba2 0%, #667eea 100%)",
+              padding: "2px",
+            },
+            "&:focus": {
+              background: `linear-gradient(90deg, ${colors.purple[800]} 10%, ${colors.purple[800]} 100%)`,
+              border: `3px solid ${colors.grey[200]}`,
+            },
+            "&:disabled": {
+              backgroundColor: colors.purple[200],
+              borderColor: colors.purple[200],
+              color: "white",
+            },
+          },
+          "&.MuiButton-sizeMini": {
+            fontSize: "12px",
             height: "28px",
           },
+          "&.MuiButton-sizeSmall": {
+            height: "32px",
+          },
           "&.MuiButton-sizeMedium": {
-            height: "31.5px",
+            height: "36px",
           },
           "&.MuiButton-sizeLarge": {
-            height: "38.5px",
+            height: "40px",
           },
         },
-        contained: ({ theme }) => ({
-          variants: [
-            {
-              props: { variant: "contained", color: "primary" },
-              style: {
-                "&:hover": {
-                  backgroundColor: theme.vars.palette.primary.light,
-                },
-                //"&."
-              },
-            },
-          ],
-        }),
-        // contained: ({ theme }) => ({
-        //   boxShadow: "none",
-        //   "&:hover": {
-        //     boxShadow: "none",
-        //     // backgroundColor: theme.vari,
-        //   },
-        // }),
       },
     },
     MuiCard: {

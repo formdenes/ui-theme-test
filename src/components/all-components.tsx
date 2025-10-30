@@ -104,14 +104,41 @@ export default function AllMaterialUIComponents() {
           <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
             <Button variant="contained">Regular button</Button>
             <Button variant="contained" disabled={true}>
-              Disabled button
+              Disabled regular
+            </Button>
+            <Button variant="contained" color="secondary">
+              Secondary button
+            </Button>
+            <Button variant="contained" color="secondary" disabled={true}>
+              Disabled secondary
             </Button>
             <Button variant="outlined">Outlined button</Button>
-            <Button variant="contained">Disabled button</Button>
+            <Button variant="outlined" disabled={true}>
+              Disabled outlined
+            </Button>
+            <Button variant="ghost">Ghost button</Button>
+            <Button variant="ghost" disabled={true}>
+              Disabled ghost
+            </Button>
+            <Button variant="destructive">Destructive button</Button>
+            <Button variant="destructive" disabled={true}>
+              Disabled destructive
+            </Button>
+            <Button variant="hcl">HCL button</Button>
+            <Button variant="hcl" disabled={true}>
+              Disabled HCL
+            </Button>
+            <Button variant="ai">AI button</Button>
+            <Button variant="ai" disabled={true}>
+              Disabled AI
+            </Button>
           </Stack>
         </Box>
         <Box sx={{ mb: 3 }}>
           <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+            <Button variant="contained" size="mini">
+              Mini button
+            </Button>
             <Button variant="contained" size="small">
               Small button
             </Button>
