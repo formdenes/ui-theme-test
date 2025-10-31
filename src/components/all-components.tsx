@@ -690,7 +690,7 @@ export default function AllMaterialUIComponents() {
         </Typography>
 
         <Accordion>
-          <AccordionSummary expandIcon={<span>▼</span>}>
+          <AccordionSummary>
             <Typography>Accordion 1</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -701,7 +701,7 @@ export default function AllMaterialUIComponents() {
           </AccordionDetails>
         </Accordion>
         <Accordion>
-          <AccordionSummary expandIcon={<span>▼</span>}>
+          <AccordionSummary>
             <Typography>Accordion 2</Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -709,7 +709,7 @@ export default function AllMaterialUIComponents() {
           </AccordionDetails>
         </Accordion>
         <Accordion>
-          <AccordionSummary expandIcon={<span>▼</span>}>
+          <AccordionSummary>
             <Typography>Accordion 3</Typography>
           </AccordionSummary>
           <AccordionDetails>
