@@ -94,6 +94,121 @@ export default function AllMaterialUIComponents() {
         Material UI v7 Component Showcase
       </Typography>
 
+      <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
+        <Box sx={{ mb: 3 }}>
+          <Typography variant="h4" gutterBottom>
+            Alerts
+          </Typography>
+          <Stack spacing={2}>
+            <Alert icon={false} severity="info">
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert icon={false} severity="error">
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Typography variant="h6" gutterBottom>
+              Show icon
+            </Typography>
+            <Alert severity="info">
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert severity="error">
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Typography variant="h6" gutterBottom>
+              Icon flipped
+            </Typography>
+            <Alert severity="info" variant="iconFlipped">
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert severity="error" variant="iconFlipped">
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Typography variant="h6" gutterBottom>
+              Show button
+            </Typography>
+            <Alert
+              icon={false}
+              severity="info"
+              action={
+                <Button color="inherit" size="small">
+                  Label
+                </Button>
+              }
+            >
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert
+              icon={false}
+              severity="error"
+              action={
+                <Button color="inherit" size="small">
+                  Label
+                </Button>
+              }
+            >
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Typography variant="h6" gutterBottom>
+              Button and icons
+            </Typography>
+            <Alert
+              severity="info"
+              action={
+                <Button color="inherit" size="small">
+                  Label
+                </Button>
+              }
+            >
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert
+              severity="error"
+              action={
+                <Button color="inherit" size="small">
+                  Label
+                </Button>
+              }
+            >
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert
+              variant="iconFlipped"
+              severity="info"
+              action={
+                <Button color="inherit" size="small">
+                  Label
+                </Button>
+              }
+            >
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Alert
+              variant="iconFlipped"
+              severity="error"
+              action={
+                <Button color="inherit" size="small">
+                  Label
+                </Button>
+              }
+            >
+              <AlertTitle>Line 1</AlertTitle>
+            </Alert>
+            <Typography variant="h6" gutterBottom>
+              Show line 2
+            </Typography>
+            <Alert severity="info">
+              <AlertTitle>Line 1</AlertTitle>
+              Line 2
+            </Alert>
+            <Alert severity="error">
+              <AlertTitle>Line 1</AlertTitle>
+              Line 2
+            </Alert>
+          </Stack>
+        </Box>
+      </Paper>
+
       {/* Buttons Section */}
       <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
         <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
@@ -401,35 +516,6 @@ export default function AllMaterialUIComponents() {
         <Typography variant="h4" gutterBottom sx={{ mb: 3 }}>
           Feedback Components
         </Typography>
-
-        <Box sx={{ mb: 3 }}>
-          <Typography variant="h6" gutterBottom>
-            Alerts
-          </Typography>
-          <Stack spacing={2}>
-            <Alert severity="error">This is an error alert</Alert>
-            <Alert severity="warning">This is a warning alert</Alert>
-            <Alert severity="info">This is an info alert</Alert>
-            <Alert severity="success">This is a success alert</Alert>
-            <Alert severity="error" variant="outlined">
-              This is an outlined error alert
-            </Alert>
-            <Alert severity="success" variant="filled">
-              This is a filled success alert
-            </Alert>
-            <Alert
-              severity="info"
-              action={
-                <Button color="inherit" size="small">
-                  UNDO
-                </Button>
-              }
-            >
-              <AlertTitle>Info Alert with Title</AlertTitle>
-              This is an alert with a title and action button
-            </Alert>
-          </Stack>
-        </Box>
 
         <Box sx={{ mb: 3 }}>
           <Typography variant="h6" gutterBottom>

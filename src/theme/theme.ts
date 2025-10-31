@@ -1,6 +1,9 @@
 import type { ThemeOptions } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
-import { AccordionExpandIcon } from "../components/CustomComponents";
+import {
+  AccordionExpandIcon,
+  AlertNeutralIcon,
+} from "../components/CustomComponents";
 import React from "react";
 
 // HCL Color Palette - exported for use in custom components
@@ -105,6 +108,7 @@ export const colors = {
     A400: "#1D2123",
     A700: "#000000",
   },
+  red: "#DC2626",
 };
 
 export const getThemeOptions = (): ThemeOptions => ({
@@ -426,15 +430,15 @@ export const getThemeOptions = (): ThemeOptions => ({
             },
           },
           "&.MuiButton-destructive": {
-            backgroundColor: "#DC2626",
-            border: `3px solid #DC2626`,
+            backgroundColor: colors.red,
+            border: `3px solid ${colors.red}`,
             color: "white",
 
             "&:hover": {
-              backgroundColor: "#DC2626",
+              backgroundColor: colors.red,
             },
             "&:focus": {
-              backgroundColor: "#DC2626",
+              backgroundColor: colors.red,
               borderColor: colors.grey[400],
             },
             "&:disabled": {
@@ -550,9 +554,74 @@ export const getThemeOptions = (): ThemeOptions => ({
       },
     },
     MuiAlert: {
+      defaultProps: {
+        //expandIcon: React.createElement(AccordionExpandIcon),
+        iconMapping: {
+          info: React.createElement(AlertNeutralIcon),
+        },
+      },
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          display: "flex",
+          background: "white",
+          border: `1px solid ${colors.grey[200]}`,
+          borderRadius: 6,
+          boxShadow: "none",
+          minHeight: "53px",
+          maxWidth: "400px",
+          width: "100%",
+
+          "&.MuiAlert-colorError": {
+            borderColor: colors.red,
+            color: colors.red,
+
+            "& .MuiSvgIcon-root": {
+              color: colors.red,
+            },
+          },
+          "& .MuiAlert-icon": {
+            marginTop: "4px",
+          },
+          "&.MuiAlert-iconFlipped": {
+            flexDirection: "row",
+            //justifyContent: "space-between",
+
+            "& .MuiAlert-message": {
+              order: 1,
+              marginRight: "auto",
+            },
+
+            "& .MuiAlert-icon": {
+              order: 2,
+              //marginRight: 0,
+            },
+
+            "& .MuiAlert-action": {
+              order: 3,
+              marginLeft: 0,
+              paddingLeft: 0,
+            },
+          },
+          "& .MuiSvgIcon-root": {
+            color: colors.grey.A400,
+            fontSize: "16px",
+          },
+
+          "& .MuiButtonBase-root": {
+            border: `1px solid ${colors.grey[200]}`,
+            boxShadow: "0px 1px 3px 0px #0000001A",
+            color: colors.grey.A400,
+          },
+        },
+      },
+    },
+    MuiAlertTitle: {
+      styleOverrides: {
+        root: {
+          fontSize: "14px",
+          fontWeight: 500,
+          marginBottom: 0,
+          marginTop: 0,
         },
       },
     },

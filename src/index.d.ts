@@ -20,3 +20,9 @@ export declare module "@mui/material/Button" {
     ai: true;
   }
 }
+
+export declare module "@mui/material/Alert" {
+  interface AlertPropsVariantOverrides {
+    iconFlipped: true;
+  }
+}
