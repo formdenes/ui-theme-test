@@ -861,6 +861,16 @@ export const getThemeOptions = (): ThemeOptions => ({
       styleOverrides: {
         root: {
           boxShadow: "none",
+          borderBottomWidth: 1,
+          borderBottomStyle: "solid",
+          borderBottomColor: colors.grey[200],
+          backgroundColor: "transparent",
+          "&::before": {
+            display: "none",
+          },
+          "&:last-of-type": {
+            borderBottom: "none",
+          },
         },
       },
     },
