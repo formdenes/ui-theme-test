@@ -824,7 +824,7 @@ export const getThemeOptions = (): ThemeOptions => ({
           fontSize: 14,
           lineHeight: 1.5,
           "&.Mui-focusVisible": {
-            boxShadow: `0 0 0 3px var(--focus-ring, ${colors.grey[300]})`,
+            boxShadow: `0 0 0 3px ${colors.grey[300]}`,
           },
           "&.Mui-disabled": {
             // color: theme.vars.palette.text.disabled,
@@ -845,17 +845,12 @@ export const getThemeOptions = (): ThemeOptions => ({
             gap: "8px",
             padding: "9.5px 12px",
           },
-          variants: [
-            {
-              props: { size: "mini" },
-              style: {
-                minHeight: "24px",
-                gap: "4px",
-                padding: "3px 4px",
-                fontSize: 12,
-              },
-            },
-          ],
+          "&.MuiToggleButton-sizeMini": {
+            minHeight: "24px",
+            gap: "4px",
+            padding: "3px 4px",
+            fontSize: 12,
+          },
         }),
       },
     },
