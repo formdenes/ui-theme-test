@@ -881,6 +881,7 @@ export const getThemeOptions = (): ThemeOptions => ({
       styleOverrides: {
         root: ({ theme }) => ({
           borderRadius: "8px",
+          fontWeight: 500,
           "&.Mui-focusVisible": {
             boxShadow: `0 0 0 3px ${colors.grey[300]}`,
             backgroundColor: "transparent",
